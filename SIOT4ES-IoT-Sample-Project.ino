@@ -129,13 +129,9 @@ void handleSetLightStatus(void) {
     wcLightStatus = !wcLightStatus;
   }
 
-  String jsonString = "";
-  jsonString += "{";
-  jsonString += "\"bedroomLight\" : " + _boolToString(bedRoomLightStatus) + ",";
-  jsonString += "\"livingRoomLight\" : " + _boolToString(livingRoomLightStatus) + ",";
-  jsonString += "\"wcLight\" : " + _boolToString(wcLightStatus) + "";
-  jsonString += "}\r\n";
-  server.send(200, "application/json", jsonString);
+  
+
+  handleGetLightStatus();
 }
 
 void handleNotFound(void) {
